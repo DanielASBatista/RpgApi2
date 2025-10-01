@@ -26,6 +26,14 @@ namespace RpgApi.Data
         {
             modelBuilder.Entity<Personagem>().ToTable("TB_PERSONAGENS");
             modelBuilder.Entity<Arma>().ToTable("TB_ARMAS");
+            modelBuilder.Entity<Usuario>().ToTable("TB_USUARIOS");
+
+            modelBuilder.Entity<Usuario>()
+                .HasMany(e => e.Personagens)
+                .WithOne(e => e.Usuario)
+                .HasForeignKey(e => e.UsuarioId)
+                .IsRequired(false);
+
 
             modelBuilder.Entity<Personagem>().HasData
             (                
