@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RpgApi.Data;
 
@@ -11,9 +12,11 @@ using RpgApi.Data;
 namespace RpgApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20251001225015_MigracaoUmParaUm")]
+    partial class MigracaoUmParaUm
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -297,112 +300,10 @@ namespace RpgApi.Migrations
                             Email = "seuEmail@gmail.com",
                             Latitude = -23.520024100000001,
                             Longitude = -46.596497999999997,
-                            PasswordHash = new byte[] { 249, 49, 149, 1, 6, 162, 234, 21, 2, 39, 8, 62, 40, 205, 144, 88, 61, 22, 85, 160, 80, 98, 175, 229, 134, 145, 71, 176, 33, 97, 55, 103, 155, 210, 93, 136, 232, 195, 52, 180, 5, 88, 40, 61, 153, 74, 141, 136, 15, 239, 33, 71, 187, 81, 79, 233, 154, 251, 62, 191, 170, 54, 90, 177 },
-                            PasswordSalt = new byte[] { 218, 72, 7, 177, 114, 67, 41, 167, 228, 218, 179, 118, 170, 122, 20, 205, 122, 157, 57, 193, 71, 119, 160, 230, 52, 117, 27, 40, 32, 60, 13, 156, 1, 207, 101, 138, 5, 220, 97, 93, 237, 57, 133, 15, 214, 83, 52, 234, 174, 193, 245, 56, 225, 159, 187, 105, 6, 182, 54, 7, 212, 3, 27, 198, 80, 218, 193, 156, 67, 23, 160, 66, 181, 74, 189, 221, 134, 193, 124, 117, 124, 66, 61, 44, 235, 102, 196, 8, 144, 15, 36, 122, 15, 188, 163, 158, 61, 129, 220, 146, 204, 212, 189, 28, 190, 50, 232, 60, 153, 211, 80, 144, 154, 33, 103, 102, 187, 183, 213, 95, 59, 70, 58, 216, 138, 125, 101, 103 },
+                            PasswordHash = new byte[] { 120, 31, 1, 83, 158, 45, 133, 61, 9, 34, 168, 112, 197, 225, 100, 20, 120, 93, 18, 140, 111, 170, 149, 203, 201, 246, 120, 5, 188, 11, 217, 174, 242, 132, 30, 64, 249, 190, 135, 51, 72, 181, 69, 184, 107, 208, 55, 172, 91, 73, 90, 198, 120, 180, 56, 243, 218, 149, 235, 67, 233, 183, 148, 163 },
+                            PasswordSalt = new byte[] { 151, 202, 86, 42, 25, 157, 120, 67, 98, 191, 120, 217, 171, 181, 201, 139, 123, 41, 217, 189, 237, 31, 99, 200, 218, 201, 118, 11, 227, 96, 204, 9, 209, 101, 64, 70, 64, 55, 97, 15, 219, 237, 44, 16, 7, 173, 170, 84, 247, 74, 63, 128, 194, 19, 56, 130, 109, 152, 153, 107, 161, 183, 235, 114, 68, 31, 32, 164, 126, 19, 105, 116, 174, 193, 178, 109, 21, 113, 4, 229, 95, 196, 85, 32, 119, 119, 145, 14, 114, 54, 83, 89, 170, 118, 109, 198, 242, 245, 26, 201, 248, 4, 242, 201, 83, 26, 129, 53, 185, 59, 213, 168, 193, 2, 55, 23, 155, 249, 136, 106, 0, 51, 99, 247, 176, 171, 48, 8 },
                             Perfil = "Admin",
                             Username = "UsuarioAdmin"
-                        });
-                });
-
-            modelBuilder.Entity("RpgApi2.Models.Habilidade", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Dano")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("TB_HABILIDADES", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Dano = 39,
-                            Nome = "Passo das Sombras"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Dano = 43,
-                            Nome = "Furia da Natureza"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Dano = 37,
-                            Nome = "Tempestade Vulcânica"
-                        });
-                });
-
-            modelBuilder.Entity("RpgApi2.Models.PersonagemHabilidade", b =>
-                {
-                    b.Property<int>("PersonagemId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("HabilidadeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PersonagemId", "HabilidadeId");
-
-                    b.HasIndex("HabilidadeId");
-
-                    b.ToTable("TB_PERSONAGENS_HABILIDADES", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            PersonagemId = 1,
-                            HabilidadeId = 1
-                        },
-                        new
-                        {
-                            PersonagemId = 1,
-                            HabilidadeId = 2
-                        },
-                        new
-                        {
-                            PersonagemId = 2,
-                            HabilidadeId = 2
-                        },
-                        new
-                        {
-                            PersonagemId = 3,
-                            HabilidadeId = 2
-                        },
-                        new
-                        {
-                            PersonagemId = 3,
-                            HabilidadeId = 3
-                        },
-                        new
-                        {
-                            PersonagemId = 4,
-                            HabilidadeId = 3
-                        },
-                        new
-                        {
-                            PersonagemId = 5,
-                            HabilidadeId = 1
-                        },
-                        new
-                        {
-                            PersonagemId = 6,
-                            HabilidadeId = 2
-                        },
-                        new
-                        {
-                            PersonagemId = 7,
-                            HabilidadeId = 3
                         });
                 });
 
@@ -426,40 +327,14 @@ namespace RpgApi.Migrations
                     b.Navigation("Usuario");
                 });
 
-            modelBuilder.Entity("RpgApi2.Models.PersonagemHabilidade", b =>
-                {
-                    b.HasOne("RpgApi2.Models.Habilidade", "Habilidade")
-                        .WithMany("PersonagemHabilidades")
-                        .HasForeignKey("HabilidadeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("RpgApi.Models.Personagem", "Personagem")
-                        .WithMany("PersonagemHabilidades")
-                        .HasForeignKey("PersonagemId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Habilidade");
-
-                    b.Navigation("Personagem");
-                });
-
             modelBuilder.Entity("RpgApi.Models.Personagem", b =>
                 {
                     b.Navigation("Arma");
-
-                    b.Navigation("PersonagemHabilidades");
                 });
 
             modelBuilder.Entity("RpgApi.Models.Usuario", b =>
                 {
                     b.Navigation("Personagens");
-                });
-
-            modelBuilder.Entity("RpgApi2.Models.Habilidade", b =>
-                {
-                    b.Navigation("PersonagemHabilidades");
                 });
 #pragma warning restore 612, 618
         }
