@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\etechas\\Desktop\\clone\\rpgapi2\\RpgApi.csproj": {}
+    "C:\\Users\\etechas\\Desktop\\CLONE\\rpgapi2\\RpgApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\etechas\\Desktop\\clone\\rpgapi2\\RpgApi.csproj": {
+    "C:\\Users\\etechas\\Desktop\\CLONE\\rpgapi2\\RpgApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\etechas\\Desktop\\clone\\rpgapi2\\RpgApi.csproj",
+        "projectUniqueName": "C:\\Users\\etechas\\Desktop\\CLONE\\rpgapi2\\RpgApi.csproj",
         "projectName": "RpgApi",
-        "projectPath": "C:\\Users\\etechas\\Desktop\\clone\\rpgapi2\\RpgApi.csproj",
+        "projectPath": "C:\\Users\\etechas\\Desktop\\CLONE\\rpgapi2\\RpgApi.csproj",
         "packagesPath": "D:\\NugetPackages",
-        "outputPath": "C:\\Users\\etechas\\Desktop\\clone\\rpgapi2\\obj\\",
+        "outputPath": "C:\\Users\\etechas\\Desktop\\CLONE\\rpgapi2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
